@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'categories.apps.CategoriesConfig',
+    'apps.users',
+    'apps.clientes',
 
 ]
 
@@ -60,7 +62,7 @@ ROOT_URLCONF = 'academiaApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # <-- aqui
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
