@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Cliente</title>
+</head>
+<body>
+    <h1>Cadastro de Cliente</h1>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Usuário</h2>
+        {{ user_form.as_p }}
+
+        <h2>Dados do Cliente</h2>
+        {{ cliente_form.as_p }}
+
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'cliente_list' %}">Voltar à lista</a>
+</body>
+</html>

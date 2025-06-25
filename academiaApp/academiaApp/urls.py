@@ -25,8 +25,6 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'), 
     path('clientes/', include('apps.clientes.urls')),
+    path("personal/", include("personal.urls", namespace="personal")),
 ]
 
-
-
-    

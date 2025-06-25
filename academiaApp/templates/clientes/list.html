@@ -1,17 +1,33 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8" />
-    <title>Lista de Clientes</title>
-</head>
-<body>
-    <h1>Lista de Clientes</h1>
-    <ul>
+{% extends 'base.html' %}
+{% block title %}Lista de Clientes{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Lista de Clientes</h1>
+<a class="btn btn-primary mb-3" href="{% url 'cliente_create' %}">➕ Adicionar Cliente</a>
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for cliente in clientes %}
-            <li>{{ cliente.user.get_full_name }} - CPF: {{ cliente.cpf }}</li>
+        <tr>
+            <td>{{ cliente.user.get_full_name }}</td>
+            <td>{{ cliente.cpf }}</td>
+            <td>
+                <a class="btn btn-sm btn-info" href="{% url 'cliente_detail' cliente.pk %}">Ver</a>
+                <a class="btn btn-sm btn-warning" href="{% url 'cliente_update' cliente.pk %}">Editar</a>
+                <a class="btn btn-sm btn-danger" href="{% url 'cliente_delete' cliente.pk %}">Deletar</a>
+            </td>
+        </tr>
         {% empty %}
-            <li>Nenhum cliente cadastrado.</li>
+        <tr>
+            <td colspan="3">Nenhum cliente cadastrado.</td>
+        </tr>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </tbody>
+</table>
+{% endblock %}
