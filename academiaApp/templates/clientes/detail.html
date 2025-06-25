@@ -1,0 +1,5 @@
+<h1>Detalhes do Cliente: {{ cliente.user.get_full_name }}</h1>
+<p>CPF: {{ cliente.cpf }}</p>
+<p>Data de Nascimento: {{ cliente.data_nascimento }}</p>
+<p>Objetivo: {{ cliente.objetivo }}</p>
+<a href="{% url 'cliente_list' %}">Voltar para lista</a>
