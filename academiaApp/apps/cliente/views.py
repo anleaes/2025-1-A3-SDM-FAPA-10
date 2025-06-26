@@ -35,3 +35,15 @@ def edit_cliente(request, id_cliente):
     else:
         form = ClienteForm(instance=cliente)
     return render(request, template_name, {"form": form})
+
+
+
+def delete_cliente(request, id_cliente):
+    cliente = get_object_or_404(Cliente, id=id_cliente)
+    cliente.delete()
+    return redirect("cliente:list_clientes")
+
+def search_cliente(request):
+    query = request.GET.get('q')
+    clientes = Cliente.objects.filter(primeiro_nome__icontains=query) if query else Cliente.objects.none()
+    return render(request, "cliente/search_results.html", {"clientes": clientes, "query": query})
