@@ -9,6 +9,8 @@ modeloapp/__pycache__/*
 /apps/exercicio/__pycache__/*
 /apps/homepage/migrations/*
 /apps/homepage/__pycache__/*
+/apps/nutricionista/migrations/*
+/apps/nutricionista/__pycache__/*
 .env
 
 __pycache__/
