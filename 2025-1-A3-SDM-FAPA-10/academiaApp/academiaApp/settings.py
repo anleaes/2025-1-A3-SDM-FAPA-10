@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'dieta.apps.DietaConfig', 
     'conta.apps.ContaConfig', 
     'servicosExtra.apps.ServicosExtraConfig',
+    'alimento.apps.AlimentoConfig',
 ]
 
 MIDDLEWARE = [
