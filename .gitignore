@@ -11,6 +11,8 @@ modeloapp/__pycache__/*
 /apps/homepage/__pycache__/*
 /apps/nutricionista/migrations/*
 /apps/nutricionista/__pycache__/*
+/apps/personal/migrations/*
+/apps/personal/__pycache__/*
 .env
 
 __pycache__/
