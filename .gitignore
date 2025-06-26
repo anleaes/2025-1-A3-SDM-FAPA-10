@@ -13,6 +13,13 @@ modeloapp/__pycache__/*
 /apps/nutricionista/__pycache__/*
 /apps/personal/migrations/*
 /apps/personal/__pycache__/*
+/apps/conta/migrations/*
+/apps/conta/__pycache__/*
+/apps/dieta/migrations/*
+/apps/dieta/__pycache__/*
+/apps/treino/migrations/*
+/apps/treino/__pycache__/*
+
 .env
 
 __pycache__/
