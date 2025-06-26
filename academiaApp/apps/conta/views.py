@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Conta
 from rest_framework import viewsets
-from .serializer import TreinoSerializer
+from .serializer import ContaSerializer
 
 # Create your views here.
 
