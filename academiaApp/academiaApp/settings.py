@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'categories.apps.CategoriesConfig',
     'homepage.apps.HomepageConfig',
     'cliente.apps.ClienteConfig',
+    'exercicio.apps.ExercicioConfig',
 ]
 
 MIDDLEWARE = [
