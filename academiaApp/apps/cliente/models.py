@@ -2,25 +2,25 @@ from django.db import models
 
 # Create your models here.
 
+class Pessoa(models.Model):
+    nome = models.CharField("Nome Completo", max_length=200)
+    sobrenome = models.CharField("Sobrenome", max_length=200)
+    rua = models.CharField("Rua / Endereço", max_length=255)
+    email = models.EmailField("Endereço de Email", unique=True)
+    
+    SEXO_CHOICES = [
+        ('M', 'Masculino'),
+        ('F', 'Feminino'),
+        ('N', 'Não Especificado'),
+    ]
+    sexo = models.CharField("Sexo", max_length=1, choices=SEXO_CHOICES, default='N')
 
-class Cliente(models.Model):
-    primeiro_nome = models.CharField("Primeiro-Nome", max_length=150)
-    segundo_nome = models.CharField("Segundo-Nome", max_length=150)
-    endereco = models.CharField("Endereco", max_length=150)
-    email = models.EmailField("Email", null=False, blank=False)
-    GENEROS = (("M", "Masculino"), ("F", "Feminino"), ("O", "Outro"))
-    genero = models.CharField("Genenro", max_length=1, choices=GENEROS)
+    criado_em = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = "Cliente"
         verbose_name_plural = "Clientes"
-        ordering = ["id"]
+        ordering = ['id']
 
     def __str__(self):
-        return self.primeiro_nome
-
-
-    
-
-    def __str__(self):
-        return self.socialnetwork.name
+        return f"{self.nome} {self.sobrenome}"
