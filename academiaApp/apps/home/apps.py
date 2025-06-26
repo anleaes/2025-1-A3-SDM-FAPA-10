@@ -3,5 +3,5 @@ from django.apps import AppConfig
 
 class inicioConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'inicio'
+    name = 'home'
     verbose_name = "AcademiaApp"
