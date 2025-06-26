@@ -3,64 +3,35 @@ from .models import Cliente
 from .forms import ClienteForm
 
 
-# Create your views here.
 def create_cliente(request):
     template_name = "cliente/cadastroCliente.html"
-    context = {}
     if request.method == "POST":
         form = ClienteForm(request.POST)
         if form.is_valid():
-            f = form.save(commit=False)
-            f.save()
-            form.save_m2m()
-            return redirect(
-                "cliente:list_clientes"
-            )  # depois criar uma tela escrito HomeCliente
-    form = ClienteForm()
-    context["form"] = form
-    return render(request, template_name, context)
+            cliente = form.save()
+            return redirect("cliente:list_clientes")
+    else:
+        form = ClienteForm()
+    return render(request, template_name, {"form": form})
 
 
 def list_clientes(request):
     template_name = "cliente/list_clientes.html"
-    
-    adicionaisPagos = AdicionaisPagos.objects.filter()
-    clientes = Cliente.objects.filter()
+    clientes = Cliente.objects.all()
     context = {
-        "cliente": clientes,
-        "adicionaisPagos": adicionaisPagos,
-        "item_cliente": item_cliente,
+        "clientes": clientes,  # Use plural para facilitar entendimento no template
     }
     return render(request, template_name, context)
 
 
 def edit_cliente(request, id_cliente):
     template_name = "cliente/cadastroCliente.html"
-    context = {}
-    client = get_object_or_404(Cliente, id=id_cliente)
+    cliente = get_object_or_404(Cliente, id=id_cliente)
     if request.method == "POST":
-        form = ClienteForm(request.POST, instance=client)
+        form = ClienteForm(request.POST, instance=cliente)
         if form.is_valid():
             form.save()
             return redirect("cliente:list_clientes")
-    form = ClienteForm(instance=client)
-    context["form"] = form
-    return render(request, template_name, context)
-
-
-def delete_cliente(request, id_cliente):
-    client = Cliente.objects.get(id=id_cliente)
-    client.delete()
-    return redirect("cliente:list_clientes")
-
-
-def search_clients(request):
-    template_name = "cliente/list_clientes.html"
-    query = request.GET.get("query")
-    item_cliente = ItemCliente.objects.filter()
-    clients = Cliente.objects.filter(segundo_nome__icontains=query)
-    context = {
-        "cliente": clients,
-        "item_cliente": item_cliente,
-    }
-    return render(request, template_name, context)
+    else:
+        form = ClienteForm(instance=cliente)
+    return render(request, template_name, {"form": form})
