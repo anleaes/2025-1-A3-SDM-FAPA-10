@@ -2,5 +2,9 @@
 modeloapp/__pycache__/*
 /apps/categories/__pycache__/*
 /apps/categories/migrations/*
-/apps/categories/__pycache__/*
-/apps/categories/migrations/*
+/apps/cliente/__pycache__/*
+/apps/cliente/migrations/*
+/apps/exercicio/__pycache__/*
+/apps/exercicio/migrations/*
+/apps/homepage/__pycache__/*
+/apps/homepage/migrations/*
