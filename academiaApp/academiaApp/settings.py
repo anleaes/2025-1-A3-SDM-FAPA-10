@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'categories.apps.CategoriesConfig',
     'homepage.apps.HomepageConfig',
+    'cliente.apps.ClienteConfig',
+    'exercicio.apps.ExercicioConfig',
 ]
 
 MIDDLEWARE = [

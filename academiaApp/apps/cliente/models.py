@@ -2,14 +2,14 @@ from django.db import models
 
 # Create your models here.
 
-class HomePage(models.Model):
+class Cliente(models.Model):
     name = models.CharField('Nome', max_length=50)
     description = models.TextField('Descricao', max_length=100)
     
     class Meta:
-        verbose_name = 'HomePage'
-        verbose_name_plural = 'HomePages'
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Clientes'
         ordering =['id']
 
     def __str__(self):
-        return self.name
+        return self.name 

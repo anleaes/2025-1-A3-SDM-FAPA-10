@@ -1,6 +1,7 @@
 from django.apps import AppConfig
 
 
-class ClienteConfig(AppConfig):
+class ExercicioConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'cliente'
+    name = 'exercicio'
+    verbose_name = 'Exercicio'
