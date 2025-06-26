@@ -3,4 +3,9 @@ modeloapp/__pycache__/*
 /apps/categories/__pycache__/*
 /apps/categories/migrations/*
 /apps/categories/__pycache__/*
-/apps/categories/migrations/*
+/apps/cliente/migrations/*
+/apps/cliente/__pycache__/*
+/apps/exercicio/migrations/*
+/apps/exercicio/__pycache__/*
+/apps/homepage/migrations/*
+/apps/homepage/__pycache__/*
