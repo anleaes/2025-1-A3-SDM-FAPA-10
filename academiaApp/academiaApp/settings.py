@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'nutricionista.apps.NutricionistaConfig',
     'personal.apps.PersonalConfig',
     'treino.apps.TreinoConfig',
+    'dieta.apps.DietaConfig', 
 
 ]
 
