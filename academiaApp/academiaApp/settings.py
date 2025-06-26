@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'treino.apps.TreinoConfig',
     'dieta.apps.DietaConfig', 
     'conta.apps.ContaConfig', 
+    'servicosExtra.apps.ServicosExtraConfig',
 ]
 
 MIDDLEWARE = [

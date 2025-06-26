@@ -19,6 +19,8 @@ modeloapp/__pycache__/*
 /apps/dieta/__pycache__/*
 /apps/treino/migrations/*
 /apps/treino/__pycache__/*
+/apps/servicosExtra/migrations/*
+/apps/servicosExtra/__pycache__/*
 
 .env
 
