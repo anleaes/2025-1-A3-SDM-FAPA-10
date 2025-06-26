@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'cliente.apps.ClienteConfig',
     'exercicio.apps.ExercicioConfig',
+    'nutricionista.apps.NutricionistaConfig',
 ]
 
 MIDDLEWARE = [
