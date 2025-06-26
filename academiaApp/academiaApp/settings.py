@@ -47,6 +47,10 @@ INSTALLED_APPS = [
     'cliente.apps.ClienteConfig',
     'exercicio.apps.ExercicioConfig',
     'nutricionista.apps.NutricionistaConfig',
+    'personal.apps.PersonalConfig',
+    'treino.apps.TreinoConfig',
+    'dieta.apps.DietaConfig', 
+    'conta.apps.ContaConfig', 
 ]
 
 MIDDLEWARE = [
