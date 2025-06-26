@@ -25,4 +25,5 @@ urlpatterns = [
     path('exercicio/', include('exercicio.urls', namespace='exercicio')), 
     path('nutri/', include('nutricionista.urls', namespace='nutricionista')), 
     path('personal/', include('personal.urls', namespace='personal')), 
+    path('treino/', include('treino.urls', namespace='treino')), 
 ]

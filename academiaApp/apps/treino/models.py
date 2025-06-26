@@ -7,8 +7,8 @@ class Treino(models.Model):
     grupoMuscular = models.TextField('Grupo Muscular', max_length=100)
     
     class Meta:
-        verbose_name = 'Personal'
-        verbose_name_plural = 'Personais'
+        verbose_name = 'Treino'
+        verbose_name_plural = 'Treinos'
         ordering =['id']
 
     def __str__(self):
