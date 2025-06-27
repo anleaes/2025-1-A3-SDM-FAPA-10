@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Alimentos{% endblock %}
+
+{% block content %}
+<h2>Lista de Alimentos</h2>
+<ul>
+  {% for alimento in alimentos %}
+    <li>{{ alimento.nome }} - {{ alimento.calorias }} kcal</li>
+  {% empty %}
+    <li>Nenhum alimento encontrado.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

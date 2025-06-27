@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Exercícios{% endblock %}
+
+{% block content %}
+<h2>Exercícios</h2>
+<ul>
+  {% for exercicio in exercicios %}
+    <li>{{ exercicio.nome }} - Grupo: {{ exercicio.grupo_muscular }}</li>
+  {% empty %}
+    <li>Nenhum exercício cadastrado.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

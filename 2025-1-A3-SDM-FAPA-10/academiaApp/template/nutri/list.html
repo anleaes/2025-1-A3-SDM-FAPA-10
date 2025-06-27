@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Nutricionistas{% endblock %}
+
+{% block content %}
+<h2>Nutricionistas Cadastrados</h2>
+<ul>
+  {% for nutri in nutricionistas %}
+    <li>{{ nutri.nome }} - CRN {{ nutri.crn }}</li>
+  {% empty %}
+    <li>Nenhum nutricionista cadastrado.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
