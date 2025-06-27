@@ -1,15 +1,19 @@
 from django.db import models
+from cliente.models import Cliente
 
 # Create your models here.
 
 class ServicosExtra(models.Model):
-    name = models.CharField('Nome', max_length=50)
-    preço = models.TextField('Valor', max_length=100)
-    
-    class Meta:
-        verbose_name = 'ServicosExtra'
-        verbose_name_plural = 'ServicosExtras'
-        ordering =['id']
+    nome = models.CharField(max_length=100)
+    preco = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
-        return self.name
+        return self.nome
+
+class ItemCliente(models.Model):
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    servico = models.ForeignKey(ServicosExtra, on_delete=models.CASCADE)
+    data_adicao = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.cliente.nome} - {self.servico.nome}"

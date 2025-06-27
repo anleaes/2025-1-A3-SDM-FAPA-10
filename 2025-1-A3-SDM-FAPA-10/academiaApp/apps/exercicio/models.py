@@ -3,8 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Exercicio(models.Model):
-    name = models.CharField('Nome', max_length=50)
-    descricao = models.TextField('Descriçao', max_length=100)
+    nome = models.CharField(max_length=100)
+    grupo_muscular = models.CharField(max_length=100)
+    duracao = models.TimeField(max_length=100, blank=True)
+    equipamento = models.CharField(max_length=100, blank=True)
 
     class Meta:
         verbose_name = 'Exercicio'
@@ -12,4 +14,4 @@ class Exercicio(models.Model):
         ordering =['id']
 
     def __str__(self):
-        return self.name
+        return self.nome

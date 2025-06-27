@@ -3,8 +3,11 @@ from django.db import models
 # Create your models here.
 
 class Alimento(models.Model):
-    nome = models.TextField('Alimento', max_length=50)
-    tipoAlimento = models.TextField('tipo de alimento', max_length=100)
+    nome = models.CharField(max_length=100)
+    calorias = models.DecimalField(max_digits=6, decimal_places=2)
+    proteinas = models.DecimalField(max_digits=5, decimal_places=2)
+    carboidratos = models.DecimalField(max_digits=5, decimal_places=2)
+    gorduras = models.DecimalField(max_digits=5, decimal_places=2)
     
     class Meta:
         verbose_name = 'Alimento'
@@ -12,4 +15,4 @@ class Alimento(models.Model):
         ordering =['id']
 
     def __str__(self):
-        return self.name
+        return self.nome

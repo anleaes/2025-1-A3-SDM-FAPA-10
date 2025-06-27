@@ -3,8 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Personal(models.Model):
-    name = models.CharField('Nome', max_length=50)
-    sobrenome = models.TextField('sobrenome', max_length=100)
+    nome = models.CharField(max_length=100)
+    cref = models.CharField(max_length=20, unique=True)
+    email = models.EmailField(unique=True)
+    telefone = models.CharField(max_length=20)
     
     class Meta:
         verbose_name = 'Personal'
@@ -12,4 +14,4 @@ class Personal(models.Model):
         ordering =['id']
 
     def __str__(self):
-        return self.name
+        return self.nome

@@ -3,9 +3,11 @@ from django.db import models
 # Create your models here.
 
 class Nutricionista(models.Model):
-    name = models.CharField('Nome', max_length=50)
-    sobrenome = models.TextField('sobrenome', max_length=100)
-    
+    nome = models.CharField(max_length=100)
+    crn = models.CharField(max_length=20, unique=True)
+    especialidade = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    telefone = models.CharField(max_length=20)
     class Meta:
         verbose_name = 'Nutricionista'
         verbose_name_plural = 'Nutricionistas'
