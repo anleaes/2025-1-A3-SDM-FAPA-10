@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Serviços Extras{% endblock %}
+
+{% block content %}
+<h2>Serviços Extras Contratados</h2>
+<ul>
+  {% for item in itens %}
+    <li>{{ item.cliente.nome }} contratou {{ item.servico.nome }} por R$ {{ item.servico.preco }}</li>
+  {% empty %}
+    <li>Nenhum serviço contratado.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

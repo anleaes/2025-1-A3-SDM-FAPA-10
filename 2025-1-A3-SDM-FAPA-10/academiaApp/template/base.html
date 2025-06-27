@@ -1,0 +1,31 @@
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Sistema Academia{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+  <header>
+    <h1>🏋️ Sistema de Academia</h1>
+    <nav>
+      <a href="{% url 'homepage' %}">Início</a>
+      <a href="{% url 'cliente_list' %}">Clientes</a>
+      <a href="{% url 'nutri_list' %}">Nutricionistas</a>
+      <a href="{% url 'personal_list' %}">Personais</a>
+      <a href="{% url 'alimento_list' %}">Alimentos</a>
+      <a href="{% url 'dieta_list' %}">Dietas</a>
+      <a href="{% url 'exercicio_list' %}">Exercícios</a>
+      <a href="{% url 'treino_list' %}">Treinos</a>
+      <a href="{% url 'servico_list' %}">Serviços Extras</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; {{ year }} Sistema de Academia</p>
+  </footer>
+</body>
+</html>

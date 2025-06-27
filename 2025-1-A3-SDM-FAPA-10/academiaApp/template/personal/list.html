@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Personais{% endblock %}
+
+{% block content %}
+<h2>Personais Cadastrados</h2>
+<ul>
+  {% for personal in personais %}
+    <li>{{ personal.nome }} - CREF {{ personal.cref }}</li>
+  {% empty %}
+    <li>Nenhum personal cadastrado.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
