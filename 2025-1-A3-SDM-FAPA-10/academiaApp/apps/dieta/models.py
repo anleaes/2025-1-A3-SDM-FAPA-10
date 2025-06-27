@@ -1,7 +1,7 @@
 from django.db import models
 from cliente.models import Cliente
 from nutricionista.models import Nutricionista
-
+from alimento.models import Alimento
 # Create your models here.
 
 class Dieta(models.Model):
@@ -17,11 +17,13 @@ class Dieta(models.Model):
 
 class PlanoAlimentar(models.Model):
     dieta = models.ForeignKey(Dieta, on_delete=models.CASCADE, related_name='planos')
-    alimento = models.ForeignKey('alimento.Alimento', on_delete=models.CASCADE)
+    alimento = models.ForeignKey(Alimento, on_delete=models.CASCADE)
     refeicao = models.CharField(max_length=50)  # Café, Almoço, etc.
     quantidade = models.DecimalField(max_digits=6, decimal_places=2)
     horario = models.TimeField()
 
 
     def __str__(self):
-        return f"{self.refeicao} - {self.alimento.nome}"
+    
+     return f"{self.refeicao} - { Alimento.nome if Alimento else 'Sem alimento'}"
+
